@@ -18,4 +18,5 @@ is important to select the input tile size such that all 2x2 max-pooling operati
 are applied to a layer with an even x- and y-size.
 
 ## Figure
-![Uploading image.png…]()
+![image](https://user-images.githubusercontent.com/76823502/187488238-d03598bb-342f-465b-b024-be759cff9827.png)
+
