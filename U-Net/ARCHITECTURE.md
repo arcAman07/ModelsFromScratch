@@ -1,4 +1,4 @@
-2         Network   Architecture
+## Network   Architecture
 The network architecture is illustrated in Figure 1. It consists of a contracting 
 path (left side) and an expansive path (right side). The contracting path follows 
 the typical architecture of a convolutional network. It consists of the repeated 
