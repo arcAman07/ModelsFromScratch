@@ -16,3 +16,5 @@ has 23 convolutional layers.
 To allow a seamless tiling of the output segmentation map (see Figure 2), it 
 is important to select the input tile size such that all 2x2 max-pooling operations 
 are applied to a layer with an even x- and y-size.
+
+## Figure 
