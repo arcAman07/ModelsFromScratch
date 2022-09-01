@@ -98,7 +98,7 @@ lenet1
 
 The value of the above formula w_ij is determined by the bitmap encoding of i, where i ranges from 0 to 9, and j ranges from 0 to 7 * 12-1. The closer the value of the RBF output is to 0, the closer it is to i, that is, the closer to the ASCII encoding figure of i, it means that the recognition result input by the current network is the character i. This layer has 84x10 = 840 parameters and connections.
 
-Summary
+## Summary
 LeNet-5 is a very efficient convolutional neural network for handwritten character recognition.
 Convolutional neural networks can make good use of the structural information of images.
 The convolutional layer has fewer parameters, which is also determined by the main characteristics of the convolutional layer, that is, local connection and shared weights.
