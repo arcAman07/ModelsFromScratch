@@ -35,4 +35,14 @@ So if you look at the architecture till now, the number of filters is increasing
 
 Next, we apply the third max-pooling layer of size 3X3 and stride 2. Resulting in the feature map of the shape 6X6X256.
 
+After this, we have our first dropout layer. The drop-out rate is set to be 0.5.
+
+Then we have the first fully connected layer with a relu activation function. The size of the output is 4096. Next comes another dropout layer with the dropout rate fixed at 0.5.
+
+This followed by a second fully connected layer with 4096 neurons and relu activation.
+
+Finally, we have the last fully connected layer or output layer with 1000 neurons as we have 10000 classes in the data set. The activation function used at this layer is Softmax.
+
+This is the architecture of the Alexnet model. It has a total of 62.3 million learnable parameters.
+
 
