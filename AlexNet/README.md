@@ -7,3 +7,5 @@ They found out that using the relu as an activation function accelerated the spe
 
 ## Alexnet Architecture
 One thing to note here, since Alexnet is a deep architecture, the authors introduced padding to prevent the size of the feature maps from reducing drastically. The input to this model is the images of size 227X227X3.
+![image](https://user-images.githubusercontent.com/76823502/187926624-5e48a80d-0acf-4360-ac03-ee5d84e6392b.png)
+
