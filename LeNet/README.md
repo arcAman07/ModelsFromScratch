@@ -62,3 +62,27 @@ After the first pooling, the second convolution, the output of the second convol
 
 The first 6 feature maps of C3 (corresponding to the 6th column of the first red box in the figure above) are connected to the 3 feature maps connected to the S2 layer (the first red box in the above figure), and the next 6 feature maps are connected to the S2 layer The 4 feature maps are connected (the second red box in the figure above), the next 3 feature maps are connected with the 4 feature maps that are not connected at the S2 layer, and the last is connected with all the feature maps at the S2 layer. The convolution kernel size is still 5 5, so there are 6 (3 5 5 + 1) + 6 (4 5 5 + 1) + 3 (4 5 5 + 1) +1 (6 5 5 + 1) = 1516 parameters. The image size is 10 10, so there are 151600 connections.
 
+S4 layer-pooling layer (downsampling layer)
+Input: 10 * 10
+Sampling area: 2 * 2
+Sampling method: 4 inputs are added, multiplied by a trainable parameter, plus a trainable offset. Results via sigmoid
+Sampling type: 16
+Output featureMap size: 5 * 5 (10/2)
+Number of neurons: 5 5 16 = 400
+Trainable parameters: 2 * 16 = 32 (the weight of the sum + the offset)
+Number of connections: 16 (2 2 + 1) 5 5 = 2000
+The size of each feature map in S4 is 1/4 of the size of the feature map in C3
+Detailed description:
+S4 is the pooling layer, the window size is still 2 * 2, a total of 16 feature maps, and the 16 10x10 maps of the C3 layer are pooled in units of 2x2 to obtain 16 5x5 feature maps. This layer has a total of 32 training parameters of 2x16, 5x5x5x16 = 2000 connections.
+The connection is similar to the S2 layer.
+
+C5 layer-convolution layer
+Input: All 16 unit feature maps of the S4 layer (all connected to s4)
+Convolution kernel size: 5 * 5
+Convolution kernel type: 120
+Output featureMap size: 1 * 1 (5-5 + 1)
+Trainable parameters / connection: 120 (16 5 * 5 + 1) = 48120
+Detailed description:
+The C5 layer is a convolutional layer. Since the size of the 16 images of the S4 layer is 5x5, which is the same as the size of the convolution kernel, the size of the image formed after convolution is 1x1. This results in 120 convolution results. Each is connected to the 16 maps on the previous level. So there are (5x5x16 + 1) x120 = 48120 parameters, and there are also 48120 connections. The network structure of the C5 layer is as follows:
+
+
