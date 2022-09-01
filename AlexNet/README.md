@@ -45,7 +45,7 @@ Finally, we have the last fully connected layer or output layer with 1000 neuron
 
 This is the architecture of the Alexnet model. It has a total of 62.3 million learnable parameters.
 
-End Notes
+## End Notes
 To quickly summarize the architecture that we have seen in this article.
 
 It has 8 layers with learnable parameters.
