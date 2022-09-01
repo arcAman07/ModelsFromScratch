@@ -31,7 +31,7 @@ Let's take a look at how many parameters are needed. The size of the convolution
 
 For the convolutional layer C1, each pixel in C1 is connected to 5 5 pixels and 1 bias in the input image, so there are 156 28 * 28 = 122304 connections in total. There are 122,304 connections, but we only need to learn 156 parameters, mainly through weight sharing.
 
-S2 layer-pooling layer (downsampling layer):
+## S2 layer-pooling layer (downsampling layer):
 Input: 28 * 28
 Sampling area: 2 * 2
 Sampling method: 4 inputs are added, multiplied by a trainable parameter, plus a trainable offset. Results via sigmoid
@@ -48,7 +48,7 @@ The pooling layer of S2 is the sum of the pixels in the 2 * 2 area in C1 multipl
 
 So each pooling core has two training parameters, so there are 2x6 = 12 training parameters, but there are 5x14x14x6 = 5880 connections.
 
-C3 layer-convolutional layer:
+## C3 layer-convolutional layer:
 Input: all 6 or several feature map combinations in S2
 Convolution kernel size: 5 * 5
 Convolution kernel type: 16
