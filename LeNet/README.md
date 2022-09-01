@@ -62,7 +62,7 @@ After the first pooling, the second convolution, the output of the second convol
 
 The first 6 feature maps of C3 (corresponding to the 6th column of the first red box in the figure above) are connected to the 3 feature maps connected to the S2 layer (the first red box in the above figure), and the next 6 feature maps are connected to the S2 layer The 4 feature maps are connected (the second red box in the figure above), the next 3 feature maps are connected with the 4 feature maps that are not connected at the S2 layer, and the last is connected with all the feature maps at the S2 layer. The convolution kernel size is still 5 5, so there are 6 (3 5 5 + 1) + 6 (4 5 5 + 1) + 3 (4 5 5 + 1) +1 (6 5 5 + 1) = 1516 parameters. The image size is 10 10, so there are 151600 connections.
 
-S4 layer-pooling layer (downsampling layer)
+## S4 layer-pooling layer (downsampling layer)
 Input: 10 * 10
 Sampling area: 2 * 2
 Sampling method: 4 inputs are added, multiplied by a trainable parameter, plus a trainable offset. Results via sigmoid
