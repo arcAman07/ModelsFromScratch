@@ -76,7 +76,7 @@ Detailed description:
 S4 is the pooling layer, the window size is still 2 * 2, a total of 16 feature maps, and the 16 10x10 maps of the C3 layer are pooled in units of 2x2 to obtain 16 5x5 feature maps. This layer has a total of 32 training parameters of 2x16, 5x5x5x16 = 2000 connections.
 The connection is similar to the S2 layer.
 
-C5 layer-convolution layer
+## C5 layer-convolution layer
 Input: All 16 unit feature maps of the S4 layer (all connected to s4)
 Convolution kernel size: 5 * 5
 Convolution kernel type: 120
