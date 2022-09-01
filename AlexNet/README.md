@@ -10,7 +10,7 @@ One thing to note here, since Alexnet is a deep architecture, the authors introd
 ![image](https://user-images.githubusercontent.com/76823502/187926624-5e48a80d-0acf-4360-ac03-ee5d84e6392b.png)
 ![image](https://user-images.githubusercontent.com/76823502/187926734-c16d5bb7-5053-4285-84df-d4c07ef5ad4f.png)
 
-Convolution and Maxpooling Layers
+## Convolution and Maxpooling Layers
 Then we apply the first convolution layer with 96 filters of size 11X11 with stride 4. The activation function used in this layer is relu. The output feature map is 55X55X96.
 
 In case, you are unaware of how to calculate the output size of a convolution layer
