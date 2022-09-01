@@ -11,12 +11,12 @@ LeNet5 is a small network, it contains the basic modules of deep learning: convo
 
 ![image](https://user-images.githubusercontent.com/76823502/187914722-c83bffd3-c55d-4e8a-801f-2de79660edef.png)
 
-INPUT LAYER
+## INPUT LAYER
 The first is the data INPUT layer. The size of the input image is uniformly normalized to 32 * 32.
 
 Note: This layer does not count as the network structure of LeNet-5. Traditionally, the input layer is not considered as one of the network hierarchy.
 
-C1 layer-convolutional layer:
+## C1 layer-convolutional layer:
 Input picture: 32 * 32
 Convolution kernel size: 5 * 5
 Convolution kernel types: 6
