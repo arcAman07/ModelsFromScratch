@@ -45,4 +45,16 @@ Finally, we have the last fully connected layer or output layer with 1000 neuron
 
 This is the architecture of the Alexnet model. It has a total of 62.3 million learnable parameters.
 
+End Notes
+To quickly summarize the architecture that we have seen in this article.
+
+It has 8 layers with learnable parameters.
+The input to the Model is RGB images.
+It has 5 convolution layers with a combination of max-pooling layers.
+Then it has 3 fully connected layers.
+The activation function used in all layers is Relu.
+It used two Dropout layers.
+The activation function used in the output layer is Softmax.
+The total number of parameters in this architecture is 62.3 million.
+
 
