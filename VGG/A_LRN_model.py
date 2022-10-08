@@ -10,12 +10,13 @@ class ConvBlock(nn.Module):
     def forward(self, x):
         return self.activation(self.conv_layer(x))
 
-class A_VGG(nn.Module):
+class A_LRN_VGG(nn.Module):
     def __init__(self, in_channels = 3, out_classes = 10, channels = [64, 128, 256, 512]):
-        super(A_VGG, self).__init__()
+        super(A_LRN_VGG, self).__init__()
         self.in_channels = in_channels
         self.conv_network = nn.Sequential(
             ConvBlock(in_channels, channels[0]),
+            nn.BatchNorm2d(channels[0]),
             nn.MaxPool2d(kernel_size = 2, stride = 2),
             ConvBlock(channels[0], channels[1]),
             nn.MaxPool2d(kernel_size = 2, stride = 2),
@@ -47,10 +48,11 @@ class A_VGG(nn.Module):
 
 def train():
     x = torch.rand((3,3,224,224))
-    model = A_VGG()
+    model = A_LRN_VGG()
     y = model(x)
     print(y)
     print(y.shape)
 
 if __name__ == "__main__":
     train()
+

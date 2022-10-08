@@ -10,23 +10,28 @@ class ConvBlock(nn.Module):
     def forward(self, x):
         return self.activation(self.conv_layer(x))
 
-class A_VGG(nn.Module):
+class C_VGG(nn.Module):
     def __init__(self, in_channels = 3, out_classes = 10, channels = [64, 128, 256, 512]):
-        super(A_VGG, self).__init__()
+        super(C_VGG, self).__init__()
         self.in_channels = in_channels
         self.conv_network = nn.Sequential(
             ConvBlock(in_channels, channels[0]),
+            ConvBlock(channels[0], channels[0]),
             nn.MaxPool2d(kernel_size = 2, stride = 2),
             ConvBlock(channels[0], channels[1]),
+            ConvBlock(channels[1], channels[1]),
             nn.MaxPool2d(kernel_size = 2, stride = 2),
             ConvBlock(channels[1], channels[2]),
             ConvBlock(channels[2], channels[2]),
+            ConvBlock(channels[2], channels[2], kernel_size = 1, padding = 0, stride = 1),
             nn.MaxPool2d(kernel_size = 2, stride = 2),
             ConvBlock(channels[2], channels[3]),
             ConvBlock(channels[3], channels[3]),
+            ConvBlock(channels[3], channels[3], kernel_size = 1, padding = 0, stride = 1),
             nn.MaxPool2d(kernel_size = 2, stride = 2),
             ConvBlock(channels[3], channels[3]),
             ConvBlock(channels[3], channels[3]),
+            ConvBlock(channels[3], channels[3], kernel_size = 1, padding = 0, stride = 1),
             nn.MaxPool2d(kernel_size = 2, stride = 2),
         )
         self.dropout = nn.Dropout(0.5)
@@ -47,7 +52,7 @@ class A_VGG(nn.Module):
 
 def train():
     x = torch.rand((3,3,224,224))
-    model = A_VGG()
+    model = C_VGG()
     y = model(x)
     print(y)
     print(y.shape)
