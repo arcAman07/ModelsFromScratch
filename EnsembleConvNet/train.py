@@ -13,7 +13,7 @@ import torch.optim as optim
 from torchvision.transforms import ToTensor, Normalize, Compose
 from torch.utils.data.dataloader import DataLoader
 
-batch_size=128
+batch_size=120
 
 train_data = datasets.FashionMNIST(
     root="data",
@@ -29,9 +29,10 @@ test_data = datasets.FashionMNIST(
 
 train_dl = DataLoader(train_data, batch_size, shuffle=True)
 val_dl = DataLoader(test_data, batch_size*2)
+
+optim = optim.Adam()
         
 def accuracy(outputs, labels):
     _, preds = torch.max(outputs, dim=1)
     return torch.tensor(torch.sum(preds == labels).item() / len(preds))
 
-def train()
