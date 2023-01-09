@@ -19,12 +19,14 @@ train_data = datasets.FashionMNIST(
     root="data",
     train=True,
     download=True,
+    transform= ToTensor(),
 )
 
 test_data = datasets.FashionMNIST(
     root="data",
     train=False,
     download=True,
+    transform= ToTensor(),
 )
 
 train_dl = DataLoader(train_data, batch_size, shuffle=True)
